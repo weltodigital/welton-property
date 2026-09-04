@@ -5,7 +5,6 @@ import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { ProjectCard } from "@/components/ProjectCard";
-import { TrustBar } from "@/components/TrustBar";
 import { Testimonials } from "@/components/Testimonials";
 import { AreasCovered } from "@/components/AreasCovered";
 import { CTABand } from "@/components/CTABand";
@@ -21,24 +20,19 @@ const howWeWork = [
   },
   {
     step: "02",
-    title: "You get a written quote",
-    body: "Itemised and fixed, so you can see exactly what you are paying for. If we think something can be done cheaper a different way, we will say so.",
-  },
-  {
-    step: "03",
     title: "We build it and clean up",
-    body: "One point of contact, a programme you can hold us to, a tidy site every evening, and a snagging walk-round before we ask for the final payment.",
+    body: "A programme you can hold us to, a tidy site every evening, and a snagging walk-round before we ask for the final payment.",
   },
 ];
 
 const homeFaqs = [
   {
     q: "Do you cover all the trades yourselves?",
-    a: "Yes — building, architectural design, plumbing, electrics, landscaping, plastering and rendering are all handled in-house. That is the whole point: you get one company accountable for the finished job rather than six contractors blaming each other.",
+    a: "Yes — building, architectural design, plumbing, electrics, landscaping, plastering and rendering are all handled in-house.",
   },
   {
     q: "How much does an extension or renovation cost?",
-    a: "It depends far too much on the property to quote a meaningful figure here, and anyone who gives you one over the phone is guessing. We come out, look at the job properly and give you a written, itemised price for free.",
+    a: "It depends far too much on the property to give a meaningful figure here, and anyone who gives you one over the phone is guessing. Get in touch and we will come out and look at the job properly.",
   },
   {
     q: "How far do you travel?",
@@ -46,7 +40,7 @@ const homeFaqs = [
   },
   {
     q: "Can you help with planning permission?",
-    a: "We can. Our architectural team handles measured surveys, drawings, planning applications and building regulations packages — and because we build too, the drawings reflect what can actually be built for the money.",
+    a: "We can. Our architectural team handles measured surveys, drawings, planning applications and building regulations packages.",
   },
 ];
 
@@ -75,51 +69,25 @@ export default function HomePage() {
               {site.baseTown} · {site.county} · {site.region}
             </p>
             <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
-              Every trade you need for the job, under one roof.
+              Builders and renovators on the south coast.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100/85">
-              Welton Property builds, renovates and finishes homes across the
-              south coast. Extensions and architectural design through to
-              plumbing, electrics, landscaping and plastering — one company,
-              one point of contact, one price.
+              Welton Property builds, renovates and finishes homes across{" "}
+              {site.baseTown}, {site.county} and {site.region}. Extensions and
+              architectural design through to plumbing, electrics, landscaping
+              and plastering.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href="/contact" variant="onDark">
-                Get a free quote
+                Get in touch
               </Button>
               <Button href="/projects" variant="ghost">
                 See our work
               </Button>
             </div>
-            <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-brand-100/75">
-              {[
-                "Free written quotes",
-                "One contact for every trade",
-              ].map((point) => (
-                <li key={point} className="flex items-center gap-2">
-                  <svg
-                    viewBox="0 0 16 16"
-                    className="h-4 w-4 text-brand-300"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M3 8.5 6.5 12 13 4.5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  {point}
-                </li>
-              ))}
-            </ul>
           </div>
         </Container>
       </section>
-
-      <TrustBar />
 
       {/* Services */}
       <section className="bg-white py-20 sm:py-24">
@@ -127,8 +95,8 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="What we do"
-              title="Seven trades, one company"
-              intro="Most jobs need more than one skill set. Rather than sending you off to find a sparky and then a plasterer, we cover the lot — and take responsibility for how the pieces fit together."
+              title="The work we take on"
+              intro="Extensions, structural work and full renovations, architectural design, plumbing and heating, electrics, landscaping and driveways, plastering and rendering."
             />
             <Button href="/services" variant="secondary">
               All services
@@ -158,7 +126,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="How we work"
                 title="No surprises, start to finish"
-                intro="Building work has a reputation for going over budget and over time. Most of that comes down to vague quotes and nobody owning the programme. We fix both."
+                intro="Building work has a reputation for going over budget and over time. Most of that comes down to nobody owning the programme."
               />
               <ol className="mt-10 space-y-8">
                 {howWeWork.map((item) => (

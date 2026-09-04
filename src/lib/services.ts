@@ -45,8 +45,8 @@ export const services: Service[] = [
     ],
     process: [
       {
-        title: "Survey and fixed quote",
-        body: "We visit, measure up, talk through what you want to achieve and go away and price it properly. You get a written, itemised quote — not a number scribbled on the back of a business card.",
+        title: "Survey and planning",
+        body: "We visit, measure up and talk through what you want to achieve, then go away and work out properly what the job involves.",
       },
       {
         title: "Programme and preparation",
@@ -54,7 +54,7 @@ export const services: Service[] = [
       },
       {
         title: "Build and hand over",
-        body: "One point of contact throughout, a tidy site at the end of each day, and a proper snagging walk-round before we ask you for the final payment.",
+        body: "A tidy site at the end of each day, and a proper snagging walk-round before we ask you for the final payment.",
       },
     ],
     faqs: [
@@ -155,8 +155,8 @@ export const services: Service[] = [
         body: "For repairs we find the actual cause rather than patching the symptom, and we tell you what we have found before we start charging for parts.",
       },
       {
-        title: "Quote before we work",
-        body: "For installations you get a written quote covering labour, materials and how long the water will be off. No surprises on the invoice.",
+        title: "Agree the work first",
+        body: "For installations we talk through the labour, the materials and how long the water will be off before we start.",
       },
       {
         title: "Test and leave it clean",

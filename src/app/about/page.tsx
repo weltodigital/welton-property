@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
-import { TrustBar } from "@/components/TrustBar";
 import { AreasCovered } from "@/components/AreasCovered";
 import { CTABand } from "@/components/CTABand";
 import { site } from "@/lib/site";
@@ -25,8 +24,8 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    title: "We quote what it costs",
-    body: "An itemised written quote, and a conversation if something changes rather than a surprise on the final invoice. If a job turns out cheaper than quoted, you pay the cheaper number.",
+    title: "We are straight about costs",
+    body: "We talk through what the work will cost before we start, and have a conversation if something changes rather than springing a surprise on the final invoice. If a job turns out cheaper than expected, you pay the cheaper number.",
   },
   {
     title: "We turn up when we say",
@@ -47,7 +46,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About us"
-        title="A south coast builder that covers the whole job"
+        title="Portsmouth builders, working across the south coast"
         intro={`Welton Property is a construction company based in ${site.baseTown}, working across ${site.county} and ${site.region}.`}
       />
 
@@ -58,22 +57,10 @@ export default function AboutPage() {
               <p className="eyebrow">Our story</p>
               <div className="mt-5 space-y-5 text-lg leading-relaxed text-ink-700/90">
                 <p>
-                  Welton Property grew out of a simple frustration: homeowners
-                  were being asked to act as their own project manager. Find a
-                  builder, then an electrician, then a plasterer. Chase all
-                  three. Work out whose fault it is when the dates slip.
-                </p>
-                <p>
-                  We decided to bring the trades together instead. Today we
-                  cover building and structural work, architectural design,
+                  We cover building and structural work, architectural design,
                   plumbing and heating, electrics, landscaping, plastering and
-                  rendering — plus the project management that holds them in
+                  rendering — plus the project management that holds a job in
                   sequence.
-                </p>
-                <p>
-                  It means you get one quote, one programme and one person to
-                  ring. It also means we cannot pass the blame anywhere, which
-                  is rather the point.
                 </p>
                 <p>
                   We are a local firm and we intend to stay one. Most of our
@@ -107,8 +94,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
-
-      <TrustBar />
 
       <section className="bg-white py-20 sm:py-24">
         <Container>

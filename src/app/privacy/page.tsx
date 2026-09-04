@@ -29,7 +29,7 @@ export default function PrivacyPage() {
     },
     {
       heading: "Why we use it",
-      body: "Solely to respond to your enquiry, arrange a site visit and provide a quote. We do not sell your data, and we do not add you to a marketing list without asking you first.",
+      body: "Solely to respond to your enquiry and arrange a site visit. We do not sell your data, and we do not add you to a marketing list without asking you first.",
     },
     {
       heading: "How long we keep it",

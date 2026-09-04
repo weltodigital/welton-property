@@ -98,7 +98,7 @@ export default async function ServicePage({ params }: Props) {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href="/contact" variant="onDark">
-                Get a free quote
+                Get in touch
               </Button>
               <Button href={site.phoneHref} variant="ghost">
                 Call {site.phone}

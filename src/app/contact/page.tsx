@@ -7,7 +7,7 @@ import { areasCovered, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Get a free, no-obligation quote from Welton Property. Building, design, plumbing, electrics, landscaping and plastering across ${site.baseTown} and ${site.county}.`,
+  description: `Get in touch with Welton Property. Building, design, plumbing, electrics, landscaping and plastering across ${site.baseTown} and ${site.county}.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -37,14 +37,14 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Tell us about your project"
-        intro="Send us a few details and we will come out, take a proper look and give you an honest written quote. It costs nothing and there is no obligation."
+        intro="Send us a few details and we will come out, take a proper look and talk you through what the work involves."
       />
 
       <section className="bg-white py-20 sm:py-24">
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1.35fr_1fr] lg:gap-20">
             <div>
-              <h2 className="text-2xl font-extrabold">Request a free quote</h2>
+              <h2 className="text-2xl font-extrabold">Send us a message</h2>
               <p className="mt-3 leading-relaxed text-ink-700/85">
                 The more you can tell us the more useful our first reply will
                 be — but a couple of lines is plenty to get started.
@@ -106,8 +106,8 @@ export default function ContactPage() {
                     <span className="font-display font-extrabold text-brand-500">
                       3
                     </span>
-                    You get a written, itemised quote — no pressure to accept
-                    it.
+                    We agree the work and the timings before anything
+                    starts.
                   </li>
                 </ol>
               </div>

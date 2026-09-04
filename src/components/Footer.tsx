@@ -96,7 +96,7 @@ export function Footer() {
               href="/contact"
               className="-my-1.5 inline-block py-1.5 hover:text-white"
             >
-              Request a quote
+              Get in touch
             </Link>
           </div>
         </div>

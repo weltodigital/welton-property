@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function CTABand({
   title = "Thinking about a project?",
-  body = "Tell us what you have in mind and we will come out, take a proper look and give you an honest, itemised quote. No pressure and no charge.",
+  body = "Tell us what you have in mind and we will come out and take a proper look.",
 }: {
   title?: string;
   body?: string;
@@ -14,7 +14,7 @@ export function CTABand({
       <Container className="py-16 sm:py-20">
         <div className="grid items-center gap-8 md:grid-cols-[1.5fr_1fr]">
           <div>
-            <p className="eyebrow eyebrow-light">Free, no-obligation quote</p>
+            <p className="eyebrow eyebrow-light">Get in touch</p>
             <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
               {title}
             </h2>
@@ -24,7 +24,7 @@ export function CTABand({
           </div>
           <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
             <Button href="/contact" variant="onDark" className="flex-1">
-              Request a quote
+              Get in touch
             </Button>
             <Button href={site.phoneHref} variant="ghost" className="flex-1">
               Call {site.phone}

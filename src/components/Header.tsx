@@ -138,7 +138,7 @@ export function Header() {
                 itself loses to the `inline-flex` in its own base classes,
                 since both are unconditional display utilities. */}
             <span className="hidden sm:block">
-              <Button href="/contact">Get a free quote</Button>
+              <Button href="/contact">Get in touch</Button>
             </span>
 
             <button
@@ -220,7 +220,7 @@ export function Header() {
 
             <div className="mt-8 space-y-3 border-t border-ink-900/10 pt-6">
               <Button href="/contact" className="w-full">
-                Get a free quote
+                Get in touch
               </Button>
               <Button href={site.phoneHref} variant="ghost" className="w-full">
                 Call {site.phone}
