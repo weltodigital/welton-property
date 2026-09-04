@@ -70,6 +70,7 @@ const businessSchema = {
   name: site.legalName,
   alternateName: site.name,
   url: site.url,
+  logo: `${site.url}/icon.png`,
   email: site.email,
   telephone: site.phone,
   description: site.description,
