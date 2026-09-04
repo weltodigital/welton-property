@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ContactWidget } from "@/components/ContactWidget";
 import { areasCovered, site } from "@/lib/site";
 import { services } from "@/lib/services";
 import "./globals.css";
@@ -104,6 +105,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <ContactWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}

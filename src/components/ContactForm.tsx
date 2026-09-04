@@ -11,18 +11,26 @@ type Status = "idle" | "sending" | "sent" | "error";
 const fieldBase =
   "w-full rounded-md border border-ink-900/15 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-700/45 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-300";
 
-export function ContactForm({ defaultService }: { defaultService?: string }) {
+export function ContactForm({
+  defaultService,
+  compact = false,
+}: {
+  defaultService?: string;
+  /** Tighter spacing for the floating widget, where width is at a premium. */
+  compact?: boolean;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [formError, setFormError] = useState<string | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     setStatus("sending");
     setErrors({});
     setFormError(null);
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
@@ -46,7 +54,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
       }
 
       setStatus("sent");
-      event.currentTarget.reset();
+      form.reset();
     } catch {
       setFormError(
         `We could not send that. Please email ${site.email} directly.`,
@@ -59,7 +67,10 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
     return (
       <div
         role="status"
-        className="rounded-lg bg-brand-50 p-8 ring-1 ring-brand-200"
+        className={cn(
+          "rounded-lg bg-brand-50 ring-1 ring-brand-200",
+          compact ? "p-6" : "p-8",
+        )}
       >
         <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-600">
           <svg viewBox="0 0 20 20" className="h-5 w-5 text-white" aria-hidden="true">
@@ -97,14 +108,18 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-5">
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      className={compact ? "space-y-4" : "space-y-5"}
+    >
       {/* Honeypot: hidden from people, tempting to bots. */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
         <label htmlFor="company">Company</label>
         <input id="company" name="company" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className={cn("grid gap-4", !compact && "gap-5 sm:grid-cols-2")}>
         <Field
           label="Your name"
           name="name"
@@ -168,7 +183,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
         <textarea
           id="message"
           name="message"
-          rows={5}
+          rows={compact ? 3 : 5}
           required
           placeholder="A rough idea of what you’re planning, the property, and any timings you’ve got in mind."
           aria-invalid={Boolean(errors.message)}
