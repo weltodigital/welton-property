@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand scale built around the house colour #bcdefb (brand-200).
+     The pastel is used for washes, accents and rules; the deeper steps
+     carry text and buttons so everything clears WCAG AA. */
+  --color-brand-50: #f4f9fe;
+  --color-brand-100: #e5f1fd;
+  --color-brand-200: #bcdefb;
+  --color-brand-300: #93c8f7;
+  --color-brand-400: #5faaef;
+  --color-brand-500: #3389e2;
+  --color-brand-600: #1f6ac6;
+  --color-brand-700: #1b539c;
+  --color-brand-800: #18447c;
+  --color-brand-900: #12305a;
+
+  /* Deep navy used for dark sections, headings and body copy. */
+  --color-ink-700: #24374d;
+  --color-ink-800: #16283c;
+  --color-ink-900: #0d1c2c;
+  --color-ink-950: #071320;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(13 28 44 / 0.06), 0 8px 24px -12px rgb(13 28 44 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(13 28 44 / 0.08), 0 18px 40px -18px rgb(13 28 44 / 0.28);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink-900);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  /* Visible keyboard focus everywhere, since we restyle buttons and links. */
+  :focus-visible {
+    outline: 3px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brand-200);
+    color: var(--color-ink-900);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Thin light-blue rule used to open sections. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand-700);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 2px;
+    background: var(--color-brand-400);
+  }
+  .eyebrow-light { color: var(--color-brand-200); }
+  .eyebrow-light::before { background: var(--color-brand-300); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

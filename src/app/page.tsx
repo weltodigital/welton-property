@@ -1,69 +1,246 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/components/Container";
+import { Button } from "@/components/Button";
+import { SectionHeading } from "@/components/SectionHeading";
+import { ServiceGrid } from "@/components/ServiceGrid";
+import { ProjectCard } from "@/components/ProjectCard";
+import { TrustBar } from "@/components/TrustBar";
+import { Testimonials } from "@/components/Testimonials";
+import { AreasCovered } from "@/components/AreasCovered";
+import { CTABand } from "@/components/CTABand";
+import { FAQ } from "@/components/FAQ";
+import { projects } from "@/lib/projects";
+import { site } from "@/lib/site";
 
-export default function Home() {
+const howWeWork = [
+  {
+    step: "01",
+    title: "We come and look",
+    body: "A proper site visit, not a guess over the phone. We measure up, talk through what you actually want and tell you honestly what is and is not realistic for your budget.",
+  },
+  {
+    step: "02",
+    title: "You get a written quote",
+    body: "Itemised and fixed, so you can see exactly what you are paying for. If we think something can be done cheaper a different way, we will say so.",
+  },
+  {
+    step: "03",
+    title: "We build it and clean up",
+    body: "One point of contact, a programme you can hold us to, a tidy site every evening, and a snagging walk-round before we ask for the final payment.",
+  },
+];
+
+const homeFaqs = [
+  {
+    q: "Do you cover all the trades yourselves?",
+    a: "Yes — building, architectural design, plumbing, electrics, landscaping, plastering and rendering are all handled in-house. That is the whole point: you get one company accountable for the finished job rather than six contractors blaming each other.",
+  },
+  {
+    q: "How much does an extension or renovation cost?",
+    a: "It depends far too much on the property to quote a meaningful figure here, and anyone who gives you one over the phone is guessing. We come out, look at the job properly and give you a written, itemised price for free.",
+  },
+  {
+    q: "Are you insured?",
+    a: "Yes, we carry public liability insurance and can send you the certificate before work starts. Ask and we will forward it.",
+  },
+  {
+    q: "How far do you travel?",
+    a: `We work across ${site.baseTown}, Fareham, Havant, Waterlooville, Chichester and the surrounding ${site.county} coast. If you are slightly outside that, get in touch anyway and we will tell you straight away whether we can help.`,
+  },
+  {
+    q: "Can you help with planning permission?",
+    a: "We can. Our architectural team handles measured surveys, drawings, planning applications and building regulations packages — and because we build too, the drawings reflect what can actually be built for the money.",
+  },
+];
+
+export default function HomePage() {
+  const featured = projects.slice(0, 6);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      {/* Hero */}
+      <section className="relative isolate overflow-hidden bg-ink-950">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/images/projects/kitchen-extension-interior.jpg"
+          alt=""
+          fill
           priority
+          sizes="100vw"
+          className="object-cover object-[60%_45%] opacity-55"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/80 to-ink-950/25"
+        />
+        <Container className="relative py-20 sm:py-24 lg:py-28">
+          <div className="max-w-2xl">
+            <p className="eyebrow eyebrow-light">
+              {site.baseTown} · {site.county} · {site.region}
+            </p>
+            <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
+              Every trade you need for the job, under one roof.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100/85">
+              Welton Property builds, renovates and finishes homes across the
+              south coast. Extensions and architectural design through to
+              plumbing, electrics, landscaping and plastering — one company,
+              one point of contact, one price.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button href="/contact" variant="onDark">
+                Get a free quote
+              </Button>
+              <Button href="/projects" variant="ghost">
+                See our work
+              </Button>
+            </div>
+            <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-brand-100/75">
+              {[
+                "Free written quotes",
+                "Fully insured",
+                "One contact for every trade",
+              ].map((point) => (
+                <li key={point} className="flex items-center gap-2">
+                  <svg
+                    viewBox="0 0 16 16"
+                    className="h-4 w-4 text-brand-300"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 8.5 6.5 12 13 4.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      <TrustBar />
+
+      {/* Services */}
+      <section className="bg-white py-20 sm:py-24">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="What we do"
+              title="Seven trades, one company"
+              intro="Most jobs need more than one skill set. Rather than sending you off to find a sparky and then a plasterer, we cover the lot — and take responsibility for how the pieces fit together."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <Button href="/services" variant="secondary">
+              All services
+            </Button>
+          </div>
+
+          <div className="mt-12">
+            <ServiceGrid />
+          </div>
+        </Container>
+      </section>
+
+      {/* How we work */}
+      <section className="bg-brand-50 py-20 sm:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div className="relative aspect-4/3 overflow-hidden rounded-lg shadow-lift">
+              <Image
+                src="/images/projects/rendered-house-porch.jpg"
+                alt="Semi-detached house after rendering, with a newly built porch"
+                fill
+                sizes="(min-width: 1024px) 500px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <SectionHeading
+                eyebrow="How we work"
+                title="No surprises, start to finish"
+                intro="Building work has a reputation for going over budget and over time. Most of that comes down to vague quotes and nobody owning the programme. We fix both."
+              />
+              <ol className="mt-10 space-y-8">
+                {howWeWork.map((item) => (
+                  <li key={item.step} className="flex gap-5">
+                    <span className="font-display text-sm font-extrabold text-brand-500">
+                      {item.step}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold">{item.title}</h3>
+                      <p className="mt-1.5 leading-relaxed text-ink-700/85">
+                        {item.body}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Projects */}
+      <section className="bg-white py-20 sm:py-24">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="Recent work"
+              title="Jobs we have finished nearby"
+              intro="Real projects, photographed on site. Driveways and gardens through to extensions, structural work and full re-renders."
+            />
+            <Button href="/projects" variant="secondary">
+              View all projects
+            </Button>
+          </div>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((project, i) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                priority={i < 3}
+              />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <Testimonials />
+      <AreasCovered />
+
+      {/* FAQ */}
+      <section className="bg-brand-50 py-20 sm:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+            <SectionHeading
+              eyebrow="Common questions"
+              title="The things people ask us first"
+              intro="A few of the questions we get asked most often. If yours is not here, ask us directly — we would rather answer it than have you guess."
+            />
+            <div>
+              <FAQ items={homeFaqs} />
+              <p className="mt-6 text-sm text-ink-700/80">
+                Still not sure?{" "}
+                <Link
+                  href="/contact"
+                  className="font-semibold text-brand-700 underline underline-offset-2"
+                >
+                  Send us a message
+                </Link>{" "}
+                — we would rather answer a question than have you guess.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <CTABand />
+    </>
   );
 }
