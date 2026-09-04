@@ -29,7 +29,6 @@ Each one is marked with a `TODO` in the source.
 | What | Where | Why it matters |
 |---|---|---|
 | **Trading address** | `src/lib/site.ts` | Only the town is set. A full address improves local search and Google Business Profile matching. |
-| **"Fully insured" claim** | `src/app/page.tsx` (hero bullet + FAQ) | The £2m figure was removed from the trust bar, but the homepage still says "Fully insured" and answers "Are you insured?". Keep or cut. |
 | **Accreditations** | service FAQs | Gas Safe, NICEIC/NAPIT, TrustMark, Checkatrade — name the real ones or remove the claim. |
 | **Project locations** | `src/lib/projects.ts` | I assigned plausible towns to the photos. Correct them so you are not claiming work in the wrong place. |
 | **Founding story / team** | `src/app/about/page.tsx` | Written generically on purpose. Harry's own account will read far better. |

@@ -41,10 +41,6 @@ const homeFaqs = [
     a: "It depends far too much on the property to quote a meaningful figure here, and anyone who gives you one over the phone is guessing. We come out, look at the job properly and give you a written, itemised price for free.",
   },
   {
-    q: "Are you insured?",
-    a: "Yes, we carry public liability insurance and can send you the certificate before work starts. Ask and we will forward it.",
-  },
-  {
     q: "How far do you travel?",
     a: `We work across ${site.baseTown}, Fareham, Havant, Waterlooville, Chichester and the surrounding ${site.county} coast. If you are slightly outside that, get in touch anyway and we will tell you straight away whether we can help.`,
   },
@@ -98,7 +94,6 @@ export default function HomePage() {
             <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-brand-100/75">
               {[
                 "Free written quotes",
-                "Fully insured",
                 "One contact for every trade",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2">
