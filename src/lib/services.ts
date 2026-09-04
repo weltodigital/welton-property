@@ -6,8 +6,6 @@ export type Service = {
   summary: string;
   /** Meta description for the service page. */
   metaDescription: string;
-  image: string;
-  imageAlt: string;
   /** Opening paragraphs on the service page. */
   intro: string[];
   /** "What we do" bullet list. */
@@ -26,12 +24,9 @@ export const services: Service[] = [
       "Extensions, renovations, structural alterations and full property refurbishments, managed from footings to final coat.",
     metaDescription:
       "Extensions, renovations and structural building work in Portsmouth, Fareham, Havant and across Hampshire. Welton Property builds it properly, first time.",
-    image: "/images/services/building-construction.jpg",
-    imageAlt:
-      "Bright open-plan kitchen and dining space created by a rear extension",
     intro: [
-      "Building work is the backbone of what we do. Whether you are adding a rear extension to make room for a growing family, knocking through to open up a tired ground floor, or refurbishing a property from top to bottom, we handle the whole build — groundworks, footings, structural steels, brickwork, roofing and the finishes that make it feel like home.",
-      "We work on homes across Portsmouth and the surrounding south coast, and we run one job at a time properly rather than juggling half a dozen at once. That means you know who is turning up, what they are doing that week, and when the next stage starts.",
+      "Building work is the backbone of what we do. Whether you’re adding a rear extension to make room for a growing family, knocking through to open up a tired ground floor, or refurbishing a property top to bottom, we handle the whole build: groundworks, footings, structural steels, brickwork, roofing and the finishes that make it feel like home.",
+      "We work on homes across Portsmouth and the surrounding south coast, and we keep the number of live jobs low on purpose. That means you know who is turning up, what they are doing that week, and when the next stage starts.",
     ],
     offerings: [
       "Single and double-storey extensions",
@@ -50,7 +45,7 @@ export const services: Service[] = [
       },
       {
         title: "Programme and preparation",
-        body: "Before a spade goes in the ground we agree a start date and a realistic programme, sort building control sign-off, and make sure materials are ordered so the job does not stall halfway through.",
+        body: "Before a spade goes in the ground we agree a start date and a realistic programme, sort building control sign-off, and make sure materials are ordered so the job doesn’t stall halfway through.",
       },
       {
         title: "Build and hand over",
@@ -60,7 +55,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Do I need planning permission for an extension?",
-        a: "Often not — many single-storey rear extensions fall under permitted development. We will tell you honestly at the survey stage which route applies to your property, and our architectural team can handle the application if one is needed.",
+        a: "Often not. Many single-storey rear extensions fall under permitted development. We’ll tell you at the survey stage which route applies to your property, and our architectural team can handle the application if you need one.",
       },
       {
         q: "How long does a typical extension take?",
@@ -77,14 +72,12 @@ export const services: Service[] = [
     title: "Architectural Design",
     navLabel: "Architectural Design",
     summary:
-      "Measured surveys, drawings, planning applications and building regulations packages — the paperwork that gets your project approved.",
+      "Measured surveys, drawings, planning applications and building regulations packages: the paperwork that gets your project approved.",
     metaDescription:
       "Architectural design, planning drawings and building regulations packages in Portsmouth and Hampshire. Welton Property takes your project from sketch to approval.",
-    image: "/images/services/architectural-design.jpg",
-    imageAlt: "Architectural drawings and floor plans laid out on a desk",
     intro: [
       "A good build starts long before anyone picks up a trowel. Our architectural service turns a rough idea into a set of drawings your local authority will approve and your builder can actually work from.",
-      "Because we build as well as design, our drawings are grounded in what is genuinely buildable and what it will genuinely cost. We are not going to hand you a beautiful scheme that falls apart the moment it meets a real budget or a real party wall.",
+      "Because we build as well as design, our drawings stay grounded in what’s actually buildable and what it’ll actually cost. You won’t get a beautiful scheme that falls apart the moment it meets a real budget or a party wall.",
     ],
     offerings: [
       "Measured building surveys and existing-condition drawings",
@@ -99,7 +92,7 @@ export const services: Service[] = [
     process: [
       {
         title: "Survey and brief",
-        body: "We measure the property accurately and sit down with you to understand the brief — how you want to live in the space, what your budget is, and what you are willing to compromise on.",
+        body: "We measure the property accurately and sit down with you to understand the brief: how you want to live in the space, what the budget is, and where you’re willing to compromise.",
       },
       {
         title: "Design and consultation",
@@ -113,7 +106,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Do I have to use you for the build as well?",
-        a: "No. Plenty of clients come to us for drawings alone and take them to another builder, and that is completely fine. The drawings are yours.",
+        a: "No. Plenty of clients come to us for drawings alone and take them to another builder, and that’s completely fine. The drawings are yours.",
       },
       {
         q: "How long does planning permission take?",
@@ -130,14 +123,12 @@ export const services: Service[] = [
     title: "Plumbing & Heating",
     navLabel: "Plumbing & Heating",
     summary:
-      "Bathrooms, boilers, full system installs, leaks and repairs — clean pipework you will never have to think about again.",
+      "Bathrooms, boilers, full system installs, leaks and repairs, with pipework you won’t have to think about again.",
     metaDescription:
       "Plumbing and heating in Portsmouth, Fareham and Havant. Bathroom installations, boiler work, leaks and full system pipework from Welton Property.",
-    image: "/images/services/plumbing.jpg",
-    imageAlt: "Plumber tightening a compression fitting beneath a basin",
     intro: [
       "Plumbing is the part of a house nobody sees and everybody notices the moment it goes wrong. We install and repair domestic plumbing and heating across the Portsmouth area, from a dripping stop tap to a complete first and second-fix on a new extension.",
-      "Because plumbing sits inside a bigger build so often, we are used to working alongside other trades and sequencing pipework so it does not have to come back out again later.",
+      "Because plumbing sits inside a bigger build so often, we’re used to working alongside other trades and sequencing pipework so it doesn’t have to come back out again later.",
     ],
     offerings: [
       "Complete bathroom, en-suite and wet room installation",
@@ -152,7 +143,7 @@ export const services: Service[] = [
     process: [
       {
         title: "Diagnose properly",
-        body: "For repairs we find the actual cause rather than patching the symptom, and we tell you what we have found before we start charging for parts.",
+        body: "For repairs we find the actual cause rather than patching the symptom, and we’ll tell you what we’ve found before we start charging for parts.",
       },
       {
         title: "Agree the work first",
@@ -166,15 +157,15 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Are you Gas Safe registered?",
-        a: "Gas appliance work is carried out by Gas Safe registered engineers. Ask us for the registration number when you book and we will send it over.",
+        a: "Gas appliance work is carried out by Gas Safe registered engineers. Ask us for the registration number when you book and we’ll send it over.",
       },
       {
         q: "How long does a new bathroom take?",
-        a: "A typical full bathroom refit runs five to eight working days including tiling, depending on whether we are moving the soil pipe or changing the layout.",
+        a: "A typical full bathroom refit runs five to eight working days including tiling, depending on whether we’re moving the soil pipe or changing the layout.",
       },
       {
         q: "Do you handle emergencies?",
-        a: "We prioritise existing clients and active jobs for urgent leaks. Call us and we will tell you honestly whether we can get to you today or whether you need an emergency-only service.",
+        a: "We prioritise existing clients and active jobs for urgent leaks. Call us and we’ll tell you whether we can get to you today or whether you need an emergency-only service.",
       },
     ],
   },
@@ -183,14 +174,12 @@ export const services: Service[] = [
     title: "Electrical",
     navLabel: "Electrical",
     summary:
-      "Rewires, consumer units, EV chargers, lighting design and certification — safe, tested and signed off.",
+      "Rewires, consumer units, EV chargers, lighting design and certification, all tested and signed off.",
     metaDescription:
       "Domestic electricians in Portsmouth and Hampshire. Rewires, consumer unit upgrades, EV chargers, lighting and EICR testing from Welton Property.",
-    image: "/images/services/electrical.jpg",
-    imageAlt: "Electrician wiring a new socket outlet into a wall back box",
     intro: [
-      "Electrical work is the one trade where cutting corners genuinely puts people at risk, so we do not. Every circuit we install is tested, certified and notified where the regulations require it.",
-      "We cover everything from adding a socket to rewiring a whole house, and we are regularly first-fixing extensions and renovations that our own building teams are putting up.",
+      "Electrical work is the one trade where cutting corners genuinely puts people at risk, so we don’t. Every circuit we install is tested, certified and notified where the regulations require it.",
+      "We cover everything from adding a socket to rewiring a whole house, and we’re regularly first-fixing extensions and renovations that our own building teams are putting up.",
     ],
     offerings: [
       "Full and partial house rewires",
@@ -213,7 +202,7 @@ export const services: Service[] = [
       },
       {
         title: "Test and certify",
-        body: "You get the certification you need for building control, your insurer or a future sale — not a promise that it will be posted on later.",
+        body: "You get the certification you need for building control, your insurer or a future sale, and you get it on the day we finish.",
       },
     ],
     faqs: [
@@ -239,10 +228,8 @@ export const services: Service[] = [
       "Block paving, patios, decking, sleeper walls, fencing and full garden transformations built on foundations that last.",
     metaDescription:
       "Landscaping and driveways in Portsmouth, Havant and Hayling Island. Block paving, patios, decking, sleeper walls and full garden builds by Welton Property.",
-    image: "/images/services/landscaping.jpg",
-    imageAlt: "Neatly finished garden with lawn, decorative stone and gravel",
     intro: [
-      "Most driveways and patios fail for the same reason: the bit you cannot see was not done properly. We excavate to the right depth, lay a proper sub-base, and get the falls and drainage right before a single block is laid.",
+      "Most driveways and patios fail for the same reason: the bit you can’t see wasn’t done properly. We excavate to the right depth, lay a proper sub-base, and get the falls and drainage right before a single block goes down.",
       "It is the least glamorous part of the job and the reason our paving is still flat and weed-free years later. From a small patio to a complete garden redesign with retaining walls and levels, we build outside spaces to the same standard as the house.",
     ],
     offerings: [
@@ -280,7 +267,7 @@ export const services: Service[] = [
       },
       {
         q: "Will my paving sink or grow weeds?",
-        a: "Not if the sub-base is right. Sinking and weeds are symptoms of a shallow dig and poor jointing, which is exactly the part of the job we do not rush.",
+        a: "Not if the sub-base is right. Sinking and weeds are symptoms of a shallow dig and poor jointing, which is exactly the part of the job we don’t rush.",
       },
     ],
   },
@@ -292,11 +279,9 @@ export const services: Service[] = [
       "Flat, ready-to-decorate walls and ceilings inside, and weatherproof silicone or K Rend finishes outside.",
     metaDescription:
       "Plastering and rendering in Portsmouth and across Hampshire. Skimming, dot and dab, silicone render and K Rend external finishes by Welton Property.",
-    image: "/images/services/plastering-rendering.jpg",
-    imageAlt: "Plasterer applying render to an external wall with a float",
     intro: [
-      "Plastering is the finish everyone judges the whole job by. A wall that is flat, square and properly polished makes an ordinary room look considered; a wavy one makes an expensive kitchen look cheap.",
-      "We skim, board, float and render across the south coast — interior ceilings and walls, and external render systems that keep weather out of solid-wall properties near the coast.",
+      "Plastering is the finish everyone judges the whole job by. A wall that’s flat, square and properly polished makes an ordinary room look considered.",
+      "We skim, board, float and render across the south coast. Interior ceilings and walls, plus external render systems that keep the weather out of solid-wall properties near the sea.",
     ],
     offerings: [
       "Skimming over existing plaster and new plasterboard",
@@ -319,7 +304,7 @@ export const services: Service[] = [
       },
       {
         title: "Protect and clean up",
-        body: "Floors sheeted, waste bagged and removed, and the room left ready for a decorator rather than for a second clean.",
+        body: "Floors sheeted, waste bagged and removed, and the room left ready for a decorator to walk into.",
       },
     ],
     faqs: [
@@ -329,11 +314,11 @@ export const services: Service[] = [
       },
       {
         q: "Can you cover Artex without removing it?",
-        a: "Usually yes — we can bond and skim over textured ceilings, or overboard them where the texture is too heavy. Note that older Artex can contain asbestos, so we test before disturbing it.",
+        a: "Usually yes. We can bond and skim over textured ceilings, or overboard them where the texture is too heavy. Older Artex can contain asbestos, so we test before disturbing it.",
       },
       {
         q: "Is render suitable for a coastal property?",
-        a: "Yes, and it is often the right answer for exposed solid-wall homes. We specify breathable silicone systems that cope with salt-laden wind and driving rain.",
+        a: "Yes, and it’s often the right answer for exposed solid-wall homes. We specify breathable silicone systems that cope with salt-laden wind and driving rain.",
       },
     ],
   },
@@ -342,14 +327,12 @@ export const services: Service[] = [
     title: "Project Management",
     navLabel: "Project Management",
     summary:
-      "One point of contact running trades, materials, budget and programme so you do not have to chase anyone.",
+      "One point of contact running trades, materials, budget and programme so you don’t have to chase anyone.",
     metaDescription:
       "Construction project management in Portsmouth and Hampshire. Welton Property coordinates trades, budget and programme so your build runs to plan.",
-    image: "/images/services/project-management.jpg",
-    imageAlt: "Project plans, budget documents and a model house on a desk",
     intro: [
-      "The hardest part of a renovation is rarely any individual trade — it is the coordination. The plasterer arriving before the electrician has first-fixed, the tiles landing three weeks late, the budget quietly drifting because nobody was tracking it.",
-      "We take that on. You get one number to call, a programme that is kept up to date, and an honest conversation the moment something threatens the date or the budget.",
+      "The hardest part of a renovation is rarely any individual trade. It’s the coordination: the plasterer arriving before the electrician has first-fixed, or the tiles landing three weeks late because nobody chased them.",
+      "We take that on. You get one number to call, a programme that’s kept up to date, and a straight conversation the moment something threatens the date or the budget.",
     ],
     offerings: [
       "Full programme planning and sequencing of trades",
@@ -368,7 +351,7 @@ export const services: Service[] = [
       },
       {
         title: "Run the site",
-        body: "We are on site, checking work as it happens rather than after it is buried, and dealing with problems while they are still small.",
+        body: "We’re on site checking work as it happens rather than after it’s buried, so problems get dealt with while they’re still small.",
       },
       {
         title: "Report and hand over",
@@ -378,7 +361,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Can you manage trades I have already appointed?",
-        a: "Yes. If you have a kitchen fitter or a specialist you want to keep, we will build them into the programme rather than insisting on our own people.",
+        a: "Yes. If you’ve got a kitchen fitter or a specialist you want to keep, we’ll build them into the programme.",
       },
       {
         q: "How do you charge for project management?",
@@ -386,7 +369,7 @@ export const services: Service[] = [
       },
       {
         q: "What happens if the project overruns?",
-        a: "You hear about it from us early, with the reason and the options, rather than discovering it when the date quietly slips past.",
+        a: "You hear about it from us early, with the reason and the options, while there is still time to do something about it.",
       },
     ],
   },

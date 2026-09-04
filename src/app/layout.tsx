@@ -26,16 +26,6 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  keywords: [
-    "builders Portsmouth",
-    "extensions Portsmouth",
-    "construction company Hampshire",
-    "block paving Portsmouth",
-    "plastering Portsmouth",
-    "electrician Portsmouth",
-    "plumber Portsmouth",
-    "landscaping Hampshire",
-  ],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

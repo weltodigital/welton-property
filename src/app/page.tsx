@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
-import { ServiceGrid } from "@/components/ServiceGrid";
+import { ServiceList } from "@/components/ServiceList";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Testimonials } from "@/components/Testimonials";
 import { AreasCovered } from "@/components/AreasCovered";
@@ -16,27 +16,27 @@ const howWeWork = [
   {
     step: "01",
     title: "We come and look",
-    body: "A proper site visit, not a guess over the phone. We measure up, talk through what you actually want and tell you honestly what is and is not realistic for your budget.",
+    body: "We’ll come round, measure up and talk through what you’re after. If the budget won’t stretch to it, you’ll hear that from us at the site visit rather than halfway through the job.",
   },
   {
     step: "02",
     title: "We build it and clean up",
-    body: "A programme you can hold us to, a tidy site every evening, and a snagging walk-round before we ask for the final payment.",
+    body: "You’ll get a programme you can hold us to. We keep the site tidy, and we walk round the finished job with you before we ask for the final payment.",
   },
 ];
 
 const homeFaqs = [
   {
     q: "Do you cover all the trades yourselves?",
-    a: "Yes — building, architectural design, plumbing, electrics, landscaping, plastering and rendering are all handled in-house.",
+    a: "Yes. Building, architectural design, plumbing, electrics, landscaping, plastering and rendering are all handled in-house.",
   },
   {
     q: "How much does an extension or renovation cost?",
-    a: "It depends far too much on the property to give a meaningful figure here, and anyone who gives you one over the phone is guessing. Get in touch and we will come out and look at the job properly.",
+    a: "Too much depends on the property for a figure here to be any use to you. Get in touch and we’ll come and look at the job properly.",
   },
   {
     q: "How far do you travel?",
-    a: `We work across ${site.baseTown}, Fareham, Havant, Waterlooville, Chichester and the surrounding ${site.county} coast. If you are slightly outside that, get in touch anyway and we will tell you straight away whether we can help.`,
+    a: `We work across ${site.baseTown}, Fareham, Havant, Waterlooville, Chichester and the surrounding ${site.county} coast. If you’re a bit outside that, ask anyway and we’ll tell you quickly whether we can help.`,
   },
   {
     q: "Can you help with planning permission?",
@@ -92,37 +92,38 @@ export default function HomePage() {
       {/* Services */}
       <section className="bg-white py-20 sm:py-24">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="What we do"
-              title="The work we take on"
-              intro="Extensions, structural work and full renovations, architectural design, plumbing and heating, electrics, landscaping and driveways, plastering and rendering."
-            />
-            <Button href="/services" variant="secondary">
-              All services
-            </Button>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              The work we take on
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink-700/85">
+              Extensions, structural work and full renovations, architectural
+              design, plumbing and heating, electrics, landscaping and
+              driveways, plastering and rendering.
+            </p>
           </div>
 
-          <div className="mt-12">
-            <ServiceGrid />
+          <div className="mt-10">
+            <ServiceList />
           </div>
         </Container>
       </section>
 
       {/* How we work */}
-      <section className="bg-brand-50 py-20 sm:py-24">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <div className="relative aspect-4/3 overflow-hidden rounded-lg shadow-lift">
+      {/* Photo runs to the left edge so one section escapes the container */}
+      <section className="bg-brand-50">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-stretch">
+            <div className="relative aspect-4/3 lg:aspect-auto lg:min-h-[34rem]">
               <Image
                 src="/images/projects/rendered-house-porch.jpg"
                 alt="Semi-detached house after rendering, with a newly built porch"
                 fill
-                sizes="(min-width: 1024px) 500px, 100vw"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
             </div>
-            <div>
+            <div className="px-5 py-16 sm:px-8 sm:py-20 lg:flex lg:flex-col lg:justify-center lg:py-24 lg:pl-14 xl:pl-20">
+              <div className="max-w-xl">
               <SectionHeading
                 eyebrow="How we work"
                 title="No surprises, start to finish"
@@ -143,26 +144,26 @@ export default function HomePage() {
                   </li>
                 ))}
               </ol>
+              </div>
             </div>
-          </div>
-        </Container>
+        </div>
       </section>
 
-      {/* Projects */}
-      <section className="bg-white py-20 sm:py-24">
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="Recent work"
-              title="Jobs we have finished nearby"
-              intro="Real projects, photographed on site. Driveways and gardens through to extensions, structural work and full re-renders."
-            />
-            <Button href="/projects" variant="secondary">
-              View all projects
-            </Button>
+      {/* Projects — deliberately wider than the rest of the page */}
+      <section className="bg-white py-20 sm:py-28">
+        <div className="mx-auto w-full max-w-[88rem] px-5 sm:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-extrabold sm:text-4xl">
+              Jobs we&rsquo;ve finished nearby
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink-700/85">
+              Every photo on this site is one of ours, taken on the job.
+              Driveways and gardens through to extensions, structural work and
+              full re-renders.
+            </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((project, i) => (
               <ProjectCard
                 key={project.slug}
@@ -171,7 +172,16 @@ export default function HomePage() {
               />
             ))}
           </div>
-        </Container>
+
+          <p className="mt-10">
+            <Link
+              href="/projects"
+              className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-800"
+            >
+              See all {projects.length} projects
+            </Link>
+          </p>
+        </div>
       </section>
 
       <Testimonials />
@@ -184,19 +194,18 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Common questions"
               title="The things people ask us first"
-              intro="A few of the questions we get asked most often. If yours is not here, ask us directly — we would rather answer it than have you guess."
             />
             <div>
               <FAQ items={homeFaqs} />
               <p className="mt-6 text-sm text-ink-700/80">
-                Still not sure?{" "}
+                Yours not here?{" "}
                 <Link
                   href="/contact"
                   className="font-semibold text-brand-700 underline underline-offset-2"
                 >
                   Send us a message
-                </Link>{" "}
-                — we would rather answer a question than have you guess.
+                </Link>
+                .
               </p>
             </div>
           </div>

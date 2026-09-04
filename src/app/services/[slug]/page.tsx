@@ -11,6 +11,7 @@ import { CTABand } from "@/components/CTABand";
 import { getService, services } from "@/lib/services";
 import { projectsForService } from "@/lib/projects";
 import { areasCovered, site } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,17 +24,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(slug);
   if (!service) return {};
 
-  return {
+  const shot = projectsForService(service.slug)[0];
+
+  return pageMetadata({
     title: `${service.title} in ${site.baseTown} & ${site.county}`,
     description: service.metaDescription,
-    alternates: { canonical: `/services/${service.slug}` },
-    openGraph: {
-      title: `${service.title} — ${site.name}`,
-      description: service.metaDescription,
-      url: `${site.url}/services/${service.slug}`,
-      images: [{ url: service.image, width: 1920, height: 1080 }],
-    },
-  };
+    path: `/services/${service.slug}`,
+    image: shot
+      ? { url: shot.image, width: 1920, height: 1080, alt: shot.alt }
+      : undefined,
+  });
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -42,6 +42,7 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const related = projectsForService(service.slug).slice(0, 3);
+  const heroShot = related[0];
   const others = services.filter((s) => s.slug !== service.slug);
 
   const faqSchema = {
@@ -58,18 +59,22 @@ export default async function ServicePage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-ink-950">
-        <Image
-          src={service.image}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-35"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/85 to-ink-950/40"
-        />
+        {heroShot && (
+          <>
+            <Image
+              src={heroShot.image}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-35"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/85 to-ink-950/40"
+            />
+          </>
+        )}
         <Container className="relative py-20 sm:py-28">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm">
             <ol className="flex flex-wrap items-center gap-2 text-brand-100/60">

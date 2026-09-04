@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { ServiceGrid } from "@/components/ServiceGrid";
+import { ServiceList } from "@/components/ServiceList";
 import { CTABand } from "@/components/CTABand";
 import { AreasCovered } from "@/components/AreasCovered";
 import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Our Services",
   description: `Building, architectural design, plumbing, electrics, landscaping, plastering and project management across ${site.baseTown} and ${site.county}.`,
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
@@ -23,7 +24,7 @@ export default function ServicesPage() {
 
       <section className="bg-white py-20 sm:py-24">
         <Container>
-          <ServiceGrid />
+          <ServiceList />
         </Container>
       </section>
 

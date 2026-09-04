@@ -6,12 +6,13 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AreasCovered } from "@/components/AreasCovered";
 import { CTABand } from "@/components/CTABand";
 import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About Us",
   description: `Welton Property is a ${site.baseTown}-based construction company covering building, design, plumbing, electrics, landscaping and plastering across ${site.county}.`,
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 /*
  * NOTE FOR LAUNCH — the copy below deliberately avoids inventing specifics.
@@ -24,20 +25,20 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    title: "We are straight about costs",
-    body: "We talk through what the work will cost before we start, and have a conversation if something changes rather than springing a surprise on the final invoice. If a job turns out cheaper than expected, you pay the cheaper number.",
+    title: "Straight about money",
+    body: "We’ll talk through what the work costs before we start. If something changes, you hear about it at the time. And if a job comes in cheaper than we thought, you pay the cheaper number.",
   },
   {
     title: "We turn up when we say",
-    body: "The single most common complaint about builders is that they vanish. We run a manageable number of jobs at once precisely so that does not happen to you.",
+    body: "The most common complaint about builders is that they disappear for a fortnight. We only run a few jobs at a time so that doesn’t happen.",
   },
   {
-    title: "We do the invisible bits properly",
-    body: "Sub-bases, damp proofing, fixings, falls. Nobody ever compliments a sub-base — but it is the difference between a driveway that lasts twenty years and one that sinks in three.",
+    title: "The invisible bits matter",
+    body: "Sub-bases, damp proofing, fixings, falls. None of it shows up in a photo, and all of it decides whether a driveway is still flat in twenty years.",
   },
   {
-    title: "We leave it clean",
-    body: "Sheeted floors, a tidy site at the end of each day, and all waste taken away. You should not be sweeping up after us.",
+    title: "You shouldn’t be cleaning up after us",
+    body: "Floors get sheeted, the site gets tidied at the end of each day, and the waste leaves with us.",
   },
 ];
 
@@ -59,14 +60,13 @@ export default function AboutPage() {
                 <p>
                   We cover building and structural work, architectural design,
                   plumbing and heating, electrics, landscaping, plastering and
-                  rendering — plus the project management that holds a job in
+                  rendering, plus the project management that keeps a job in
                   sequence.
                 </p>
                 <p>
-                  We are a local firm and we intend to stay one. Most of our
-                  work comes from people who saw us on a neighbour&rsquo;s
-                  house, which is a strong incentive to leave every street we
-                  work on looking better than we found it.
+                  We’re a local firm and we intend to stay one. Most of our
+                  work comes from people who saw us working on a
+                  neighbour’s house.
                 </p>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="How we operate"
-            title="Four things we will not compromise on"
+            title="How we try to work"
             align="center"
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -121,7 +121,7 @@ export default function AboutPage() {
       <AreasCovered />
       <CTABand
         title="Want to talk it through?"
-        body={`Drop Harry a line at ${site.email} or send us the details of what you are planning. We will come out, take a look and give you a straight answer.`}
+        body={`Drop Harry a line at ${site.email}, or send over the details of what you’re planning and we’ll come and take a look.`}
       />
     </>
   );

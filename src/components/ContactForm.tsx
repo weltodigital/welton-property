@@ -73,10 +73,10 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
             />
           </svg>
         </div>
-        <h3 className="mt-5 text-xl font-bold">Thanks — that is with us.</h3>
+        <h3 className="mt-5 text-xl font-bold">Thanks, that’s with us.</h3>
         <p className="mt-2 leading-relaxed text-ink-700/85">
           We read every enquiry ourselves and normally come back within one
-          working day. If it is urgent, call us on{" "}
+          working day. If it’s urgent, call us on{" "}
           <a
             href={site.phoneHref}
             className="font-semibold text-brand-700 underline underline-offset-2"
@@ -170,7 +170,7 @@ export function ContactForm({ defaultService }: { defaultService?: string }) {
           name="message"
           rows={5}
           required
-          placeholder="A rough idea of what you are planning, the property, and any timings you have in mind."
+          placeholder="A rough idea of what you’re planning, the property, and any timings you’ve got in mind."
           aria-invalid={Boolean(errors.message)}
           className={cn(
             fieldBase,

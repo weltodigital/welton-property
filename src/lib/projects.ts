@@ -102,7 +102,7 @@ export const projects: Project[] = [
     image: "/images/projects/garden-groundworks.jpg",
     alt: "Front garden stripped back to soil and levelled, ready for a new driveway",
     summary:
-      "An overgrown front garden cleared, roots removed and the ground levelled ready for the sub-base — the stage that decides whether paving lasts.",
+      "An overgrown front garden cleared, roots removed and the ground levelled ready for the sub-base.",
   },
 ];
 

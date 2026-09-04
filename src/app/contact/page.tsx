@@ -4,12 +4,13 @@ import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { AreasCovered } from "@/components/AreasCovered";
 import { areasCovered, site } from "@/lib/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact Us",
   description: `Get in touch with Welton Property. Building, design, plumbing, electrics, landscaping and plastering across ${site.baseTown} and ${site.county}.`,
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 const details = [
   {
@@ -37,7 +38,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Tell us about your project"
-        intro="Send us a few details and we will come out, take a proper look and talk you through what the work involves."
+        intro="Send us a few details and we’ll come and take a proper look."
       />
 
       <section className="bg-white py-20 sm:py-24">
@@ -46,8 +47,8 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-extrabold">Send us a message</h2>
               <p className="mt-3 leading-relaxed text-ink-700/85">
-                The more you can tell us the more useful our first reply will
-                be — but a couple of lines is plenty to get started.
+                The more you can tell us, the more useful our first reply
+                will be. A couple of lines is plenty to get started.
               </p>
               <div className="mt-9">
                 <ContactForm />
@@ -92,21 +93,20 @@ export default function ContactPage() {
                     <span className="font-display font-extrabold text-brand-500">
                       1
                     </span>
-                    We reply within one working day to ask anything we need to
-                    know.
+                    We’ll reply within one working day.
                   </li>
                   <li className="flex gap-3">
                     <span className="font-display font-extrabold text-brand-500">
                       2
                     </span>
-                    We book a site visit at a time that suits you, including
-                    evenings.
+                    We’ll book a site visit at a time that suits you,
+                    evenings included.
                   </li>
                   <li className="flex gap-3">
                     <span className="font-display font-extrabold text-brand-500">
                       3
                     </span>
-                    We agree the work and the timings before anything
+                    We’ll agree the work and the timings before anything
                     starts.
                   </li>
                 </ol>

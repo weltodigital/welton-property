@@ -4,7 +4,7 @@ export const site = {
   tagline: "Building, renovating and finishing homes across the south coast",
   description:
     "Welton Property is a Portsmouth-based construction company delivering extensions, renovations, architectural design, plumbing, electrics, landscaping and plastering across Hampshire and the south coast.",
-  url: "https://weltonproperty.co.uk",
+  url: "https://www.weltonproperty.co.uk",
   email: "harry@weltonproperty.co.uk",
   phone: "07361 216937",
   phoneHref: "tel:+447361216937",

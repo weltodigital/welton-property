@@ -14,8 +14,8 @@ export function Footer() {
           <div className="md:col-span-4">
             <Logo light />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-100/70">
-              {site.legalName} — building, renovating and finishing homes across{" "}
-              {site.baseTown}, {site.county} and {site.region}.
+              {site.legalName}. Building, renovating and finishing homes
+              across {site.baseTown}, {site.county} and {site.region}.
             </p>
             <div className="mt-6 space-y-2 text-sm">
               <a

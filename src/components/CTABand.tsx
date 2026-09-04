@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function CTABand({
   title = "Thinking about a project?",
-  body = "Tell us what you have in mind and we will come out and take a proper look.",
+  body = "Tell us what you’ve got in mind and we’ll come and take a proper look.",
 }: {
   title?: string;
   body?: string;

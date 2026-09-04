@@ -11,8 +11,8 @@ export default function NotFound() {
           That page has been knocked through.
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-700/85">
-          The page you were after does not exist any more. Try our services or
-          our recent projects — or just give us a ring on{" "}
+          The page you were after doesn’t exist any more. Try our services or
+          our recent projects, or give us a ring on{" "}
           <a
             href={site.phoneHref}
             className="font-semibold text-brand-700 underline underline-offset-2"
